@@ -14,7 +14,9 @@
       socket.on("hello", (data) => {
         console.log(data.message);
         document.querySelector("#main").innerHTML = data.message;
-        socket.emit("resp_client", { message: "Ok Ok" });
+
+        //emit message back-end
+        // socket.emit("resp_client", { message: "Ok Ok" });
       });
     </script>
   </body>
