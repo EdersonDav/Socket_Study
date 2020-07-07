@@ -11,6 +11,11 @@
     <script src="/socket.io/socket.io.js"></script>
     <script>
       const socket = io("http://localhost:5000");
+      socket.on("hello", (data) => {
+        console.log(data.message);
+        document.querySelector("#main").innerHTML = data.message;
+        socket.emit("resp_client", { message: "Ok Ok" });
+      });
     </script>
   </body>
 </html>

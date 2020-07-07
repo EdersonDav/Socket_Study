@@ -25,4 +25,8 @@ const io = socketIO(server);
 
 io.on("connection", (socket) => {
   console.log("New connectiom");
+  socket.emit("hello", { message: "Welcome!!!!" });
+  socket.on("resp_client", (data) => {
+    console.log(data.message);
+  });
 });
